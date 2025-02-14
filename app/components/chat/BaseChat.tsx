@@ -44,8 +44,6 @@ interface BaseChatProps {
   isStreaming?: boolean;
   messages?: Message[];
   description?: string;
-  //enhancingPrompt?: boolean;
-  //promptEnhanced?: boolean;
   input?: string;
   model?: string;
   setModel?: (model: string) => void;
@@ -55,7 +53,6 @@ interface BaseChatProps {
   handleStop?: () => void;
   sendMessage?: (event: React.UIEvent, messageInput?: string) => void;
   handleInputChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  //enhancePrompt?: () => void;
   importChat?: (description: string, messages: Message[]) => Promise<void>;
   exportChat?: () => void;
   uploadedFiles?: File[];
@@ -81,11 +78,7 @@ export const BaseChat = React.forwardRef<HTMLDivElement, BaseChatProps>(
       setProvider,
       providerList,
       input = '',
-      enhancingPrompt,
       handleInputChange,
-
-      // promptEnhanced,
-      // enhancePrompt,
       sendMessage,
       handleStop,
       importChat,
